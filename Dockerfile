@@ -7,4 +7,4 @@ RUN rm r53-dyndns-master.zip
 RUN pip install -r /r53-dyndns-master/requirements.txt
 RUN cd /r53-dyndns-master && python setup.py install
 RUN mkdir -p /var/log/r53-dyndns/
-CMD r53-dyndns.py -d -c /etc/r53-dyndns.cfg
+CMD r53-dyndns.py -d -c /etc/r53-dyndns.cfg -l -D && tail -f /var/log/r53-dyndns/r53-dyndns.log
